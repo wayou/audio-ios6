@@ -3,6 +3,8 @@
 //http://stackoverflow.com/questions/12517000/no-sound-on-ios-6-web-audio-api
 //
 //http://www.html5rocks.com/en/tutorials/webaudio/intro/
+//
+//http://labs.music.baidu.com/demo/muplayer/doc/api.html
 $(function() {
     var snd1 = null,
         snd2 = null,
