@@ -74,15 +74,29 @@ $(function() {
         }
     });
 
-    $('#btn3').on('click tap', function() {
-        // 初始化一个MuPlayer的实例。注意，我们默认使用了_mu全局命名空间。
-        var player = new _mu.Player({
-            // baseDir是必填初始化参数，指向刚才签出的MuPlayer静态资源目录
-            baseDir: '/'
-        });
+    // 初始化一个MuPlayer的实例。注意，我们默认使用了_mu全局命名空间。
+    var player = new _mu.Player({
+        // baseDir是必填初始化参数，指向刚才签出的MuPlayer静态资源目录
+        baseDir: '/',
+        mode: 'single'
+    });
 
-        // 通过add方法添加需要播放的音频，并调用play方法开始播放。
-        player.add('background.mp3').play();
+    // 通过add方法添加需要播放的音频，并调用play方法开始播放。
+    player.add('1.mp3');
+    player.add('2.mp3');
+    player.add('3.mp3');
+
+    $('#btn3').on('click tap', function() {
+        player.play();
+
+        setTimeout(function() {
+            player.stop();
+        }, 500);
+        setTimeout(function() {
+            player.setCur('1.mp3');
+            player.play();
+        }, 1500);
+
     });
 
 
