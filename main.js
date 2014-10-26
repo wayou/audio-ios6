@@ -20,8 +20,8 @@ $(function() {
             snd1 = new Audio();
             snd1.src = 'background.mp3';
             snd1.oncanplay = function() {
-                    this.play();
-                };
+                this.play();
+            };
         } else {
             alert('cached!');
             snd1.currentTime = 0;
@@ -73,4 +73,17 @@ $(function() {
             // note: on older systems, may have to use deprecated noteOn(time);
         }
     });
+
+    $('#btn3').on('click tap', function() {
+        // 初始化一个MuPlayer的实例。注意，我们默认使用了_mu全局命名空间。
+        var player = new _mu.Player({
+            // baseDir是必填初始化参数，指向刚才签出的MuPlayer静态资源目录
+            baseDir: '/'
+        });
+
+        // 通过add方法添加需要播放的音频，并调用play方法开始播放。
+        player.add('background.mp3').play();
+    });
+
+
 });
