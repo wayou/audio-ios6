@@ -19,13 +19,9 @@ $(function() {
         if (snd1 == null) {
             snd1 = new Audio();
             snd1.src = 'background.mp3';
-            if ('oncanplay' in snd1) {
-                snd1.oncanplay = function() {
+            snd1.oncanplay = function() {
                     this.play();
                 };
-            } else {
-                alert('no canplay event!');
-            }
         } else {
             alert('cached!');
             snd1.currentTime = 0;
