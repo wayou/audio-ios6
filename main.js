@@ -89,6 +89,7 @@ $(function() {
     player.add('3.mp3');
 
     $('#btn3').on('click tap', function() {
+        player.setCur('3.mp3');
         player.play();
 
         setTimeout(function() {
